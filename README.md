@@ -167,3 +167,7 @@ rules/
 > - OpenCode Rules：https://opencode.ai/docs/zh-cn/rules/
 > - Github Copilot Rules：https://code.visualstudio.com/docs/copilot/customization/custom-instructions
 > - Cursor Rules：https://cursor.com/cn/docs/rules
+
+## 友链
+
+- [Linux.do](https://linux.do/)
