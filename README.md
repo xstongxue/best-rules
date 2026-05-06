@@ -138,6 +138,42 @@ rules/
 ### 通用规则
 [🔥rules/global.md](rules/global.md)
 
+### 怎么用 `global.md`（可直接照抄）
+
+`global.md` 的定位是“长期稳定的通用约束”，比如输出语言、最小改动原则、安全边界、先验证再提交等。
+
+#### 用法 A：作为全局规则（推荐先这样用）
+
+把 `rules/global.md` 的内容复制到你工具的**全局规则文件**：
+
+- Claude Code：`~/.claude/CLAUDE.md`
+- Codex / OpenCode：`~/.codex/AGENTS.md`
+- GitHub Copilot：`~/.github/copilot-instructions.md`
+- Cursor：Settings → Rules/Skills/Subagents → User Rules（粘贴内容）
+
+Windows 下 Claude Code 常见位置：
+
+```text
+C:\Users\你的用户名\.claude\CLAUDE.md
+```
+
+#### 用法 B：作为项目规则（团队协作更稳）
+
+如果你希望规则只在当前仓库生效，把 `global.md` 的核心条目复制到项目规则文件：
+
+- Claude Code：项目根目录 `CLAUDE.md`
+- Codex / OpenCode：项目根目录 `AGENTS.md`
+- GitHub Copilot：仓库 `.github/copilot-instructions.md`（或 `.github/instructions/*.instructions.md`）
+- Cursor：项目 `.cursor/rules/global.mdc`（或按域拆分多个 `.mdc`）
+
+#### 推荐组合（实战）
+
+1. 先上 `global.md`（全局共识）
+2. 再叠加一个技术栈规则（如 `rules/stacks/python.md`）
+3. 最后按任务加场景规则（如 `rules/scenarios/bugfix.md`）
+
+这样通常能在不增加太多上下文负担的前提下，明显减少 AI 跑偏和返工。
+
 ### 技术栈规则
 
 | 技术栈 | 文件 | 适用 glob |
